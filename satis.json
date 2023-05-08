@@ -1,0 +1,16 @@
+{
+    "name": "trackleft/packagist",
+    "homepage": "https://where-are-you/",
+    "repositories": [
+      {
+        "packagist.org": false
+      },
+      {
+        "type": "vcs",
+        "url": "https://github.com/my-cool-org/the-repository"
+      }
+    ],
+    "require-all": true,
+    "output-dir": "docs"
+}
+  
