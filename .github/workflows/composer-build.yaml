@@ -8,16 +8,17 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - name: Checkout code
+        uses: actions/checkout@v3
       - uses: dev-this/satis-build@v1
         with:
-          token: ${{ GITHUB_TOKEN_PACKAGIST }} # App/OAuth token, PAT
+          token: ${{ TOKEN_GITHUB_PACKAGIST }} # App/OAuth token, PAT
       - env:
           GIT_EMAIL: bot@github.com
           GIT_NAME: cool-bot
         run: |
-          git config user.name $GIT_NAME
-          git config user.email $GIT_EMAIL
+          git config user.name github-actions
+          git config user.email github-actions@github.com
           git add docs/
           git commit -m "Re-built repository assets"
           git push
